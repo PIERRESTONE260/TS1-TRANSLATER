@@ -1,0 +1,31 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dégradé Professionnel -->
+  <defs>
+    <linearGradient id="gradTS1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0b2239;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- L'Hexagone de fond (La Pierre Tech) -->
+  <path d="M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z" 
+        fill="url(#gradTS1)" />
+
+  <!-- Symbole de Traduction au centre -->
+  <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Lettre A stylisée (Source) -->
+    <path d="M35 55 L42 40 L49 55 M38 50 H46" stroke-width="3"/>
+    
+    <!-- Symbole de caractère étranger/boucle (Cible) -->
+    <path d="M52 42 C60 42 65 45 65 50 C65 55 60 58 52 58 M58 42 V62" stroke-width="3"/>
+    
+    <!-- Flèches d'échange dynamique -->
+    <path d="M30 35 L70 35 L65 30 M70 35 L65 40" stroke-width="2" opacity="0.8"/>
+    <path d="M70 65 L30 65 L35 60 M30 65 L35 70" stroke-width="2" opacity="0.8"/>
+  </g>
+
+  <!-- Points de connexion Tech -->
+  <circle cx="50" cy="5" r="2" fill="#3b82f6" />
+  <circle cx="90" cy="27.5" r="2" fill="#3b82f6" />
+  <circle cx="10" cy="72.5" r="2" fill="#3b82f6" />
+</svg>

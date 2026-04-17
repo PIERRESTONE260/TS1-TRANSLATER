@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TS1-TRANSLATER | Par tech-stone one</title>
+    
+    <!-- Polices et Icones -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- PWA & Mobile Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="icon.png">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- HEADER AVEC LOGO SVG TS1 -->
+        <header>
+            <div class="logo-container">
+                <svg class="app-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gradTS1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0b2239;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <path d="M50 5 L90 27.5 V72.5 L50 95 L10 72.5 V27.5 Z" fill="url(#gradTS1)" />
+                    <g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M35 55 L42 40 L49 55 M38 50 H46" stroke-width="3"/>
+                        <path d="M52 42 C60 42 65 45 65 50 C65 55 60 58 52 58 M58 42 V62" stroke-width="3"/>
+                    </g>
+                    <circle cx="50" cy="5" r="2" fill="#3b82f6" />
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-name">TS1</span>
+                    <span class="app-name">TRANSLATER</span>
+                </div>
+            </div>
+            <button id="aboutBtn" class="info-btn" title="À propos">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </header>
+
+        <main>
+            <!-- GRILLE DE TRADUCTION -->
+            <div class="translator-grid">
+                
+                <!-- Bloc Source -->
+                <div class="card">
+                    <div class="card-header">
+                        <select id="sourceLang">
+                            <!-- Rempli par script.js -->
+                        </select>
+                        <button class="icon-btn" id="clearText" title="Effacer tout">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <textarea id="sourceText" placeholder="Entrez le texte à traduire..."></textarea>
+                    <div class="card-footer">
+                        <button class="action-btn" id="speakSource" title="Écouter">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <span class="char-count">0 / 5000</span>
+                    </div>
+                </div>
+
+                <!-- Bouton Central d'Action -->
+                <div class="main-action">
+                    <button id="translateBtn" class="translate-trigger">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Traduire</span>
+                    </button>
+                </div>
+
+                <!-- Bloc Résultat -->
+                <div class="card result-card">
+                    <div class="card-header">
+                        <select id="targetLang">
+                            <!-- Rempli par script.js -->
+                        </select>
+                        <button class="icon-btn" id="copyBtn" title="Copier la traduction">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                    <textarea id="targetText" placeholder="Traduction..." readonly></textarea>
+                    <div class="card-footer">
+                        <button class="action-btn" id="speakTarget" title="Écouter la traduction">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="action-btn fav-btn" id="favBtn" title="Enregistrer en favoris">
+                            <i class="fas fa-star"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTIONS HISTORIQUE & FAVORIS -->
+            <div class="extra-grid">
+                <section class="history-section">
+                    <h3><i class="fas fa-history"></i> Historique</h3>
+                    <ul id="historyList">
+                        <!-- Rempli par script.js -->
+                    </ul>
+                    <button id="clearHistory" class="text-link">Effacer tout</button>
+                </section>
+                
+                <section class="fav-section">
+                    <h3><i class="fas fa-bookmark"></i> Favoris</h3>
+                    <ul id="favList">
+                        <!-- Rempli par script.js -->
+                    </ul>
+                </section>
+            </div>
+        </main>
+
+        <!-- MODAL À PROPOS -->
+        <div id="aboutModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <img src="logo.png" alt="TS1" class="modal-logo" onerror="this.style.display='none'">
+                    <h2>TS1-TRANSLATER</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <p>Une solution de traduction universelle haute performance.</p>
+                    <div class="brand-box">
+                        <p>Développé par l'écosystème</p>
+                        <h3>tech-stone one</h3>
+                        <p class="slogan">Innovation & Diversité</p>
+                    </div>
+                    <div class="version-info">
+                        <p>Version 1.0.0 © 2026</p>
+                        <p>Tous droits réservés</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -32,6 +32,7 @@
       }
     ],
     "apple-touch-icons": "off",
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "meta-viewport": "off"
   }
 }

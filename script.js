@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- INITIALISATION ---
     const initLangs = () => {
         // Ajouter l'option auto-détection en premier
-        sourceSelect.innerHTML = `<option value="auto">🌐 Détecter la langue</option>`;
+        sourceSelect.innerHTML = `<option value="auto">🌐 Selection de langue</option>`;
         
         // Trier les langues par ordre alphabétique
         const sortedLangs = Object.entries(languages).sort((a, b) => a[1].localeCompare(b[1]));

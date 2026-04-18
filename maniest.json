@@ -4,13 +4,15 @@
   "description": "Traducteur Universel par tech-stone one",
   "start_url": "index.html",
   "display": "standalone",
-  "background_color": "#1e3c72",
-  "theme_color": "#1e3c72",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "logo.svg",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
     },
     {
       "src": "icon.png",

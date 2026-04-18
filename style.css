@@ -155,3 +155,72 @@ li {
     #translateBtn { width: 100%; border-radius: 10px; height: auto; padding: 15px; }
     .extra-grid { grid-template-columns: 1fr; }
 }
+
+/* --- BASE RESPONSIVE --- */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px; /* Plus petit padding sur mobile */
+}
+
+/* --- GRILLE ADAPTATIVE --- */
+.translator-grid {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr; /* 3 colonnes sur PC */
+    gap: 20px;
+    align-items: center;
+}
+
+/* --- MEDIA QUERY POUR MOBILE (Écrans inférieurs à 850px) --- */
+@media (max-width: 850px) {
+    .translator-grid {
+        grid-template-columns: 1fr; /* On passe à 1 seule colonne */
+    }
+
+    .main-action {
+        order: 2; /* On place le bouton traduire au milieu */
+        margin: 10px 0;
+    }
+
+    .card {
+        order: 1; /* Texte source en haut */
+    }
+
+    .result-card {
+        order: 3; /* Résultat en bas */
+    }
+
+    #translateBtn {
+        width: 100%; /* Bouton large sur mobile pour cliquer facilement avec le pouce */
+        height: 60px;
+        border-radius: 12px;
+        flex-direction: row;
+        gap: 15px;
+        font-size: 1.2rem;
+    }
+
+    textarea {
+        height: 180px; /* Un peu moins haut sur petit écran */
+        font-size: 1rem;
+    }
+
+    .extra-grid {
+        grid-template-columns: 1fr; /* Historique et Favoris l'un sous l'autre */
+    }
+
+    .logo-container .brand-name {
+        font-size: 1.1rem; /* Texte un peu plus petit */
+    }
+}
+
+/* Optimisation pour les très petits téléphones */
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    .card-header select {
+        max-width: 150px; /* Évite que le sélecteur déborde */
+    }
+}
